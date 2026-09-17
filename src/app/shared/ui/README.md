@@ -4,7 +4,7 @@ Base, reusable presentational components extracted from the Figma template ("Per
 
 ## Icon (`app-icon`)
 
-Renders one of the SVG assets in `public/icons/` (extracted from Figma: `arrow-up-right`, `link`, `phone`, `mail`, `behance`, `dribbble`, `instagram`).
+Renders one of the SVG assets in `public/icons/`: `arrow-up-right`, `link`, `phone`, `mail` are extracted from Figma; `github` and `linkedin` are custom-authored (not in the source Figma file, which only ships generic Behance/Dribbble/Instagram placeholders) but follow the same visual pattern (white circle badge, `#141313` glyph) for consistency.
 
 ```html
 <app-icon name="arrow-up-right" class="size-6" />
@@ -56,6 +56,6 @@ Underlined form field (label + input or textarea) matching the contact form styl
 
 Defined in `src/styles.css` under `@theme`, extracted from the Figma file:
 
-- Colors: `ink` (`#141313`, near-black — primary text/backgrounds) and the brand gradient stops `brand-purple` (`#b86adf`), `brand-coral` (`#ff6c63`), `brand-orange` (`#ffb147`) — used together as `bg-gradient-to-r from-brand-purple via-brand-coral to-brand-orange` for decorative panels (hero, testimonials, contact form).
+- Colors: `ink` (`#141313`, near-black — primary text/backgrounds) and the brand gradient stops `brand-purple` (`#b86adf`), `brand-coral` (`#ff6c63`), `brand-orange` (`#ffb147`) — used together as `bg-linear-to-r from-brand-purple via-brand-coral to-brand-orange` for decorative panels (hero, testimonials, contact form).
 - Fonts: `font-sans` (IBM Plex Sans — body text, headings, UI) and `font-serif` (IBM Plex Serif Bold — logo mark only), loaded via Google Fonts in `src/index.html`.
 - Corners are square everywhere (no border-radius) — this is a deliberate part of the template's flat, bold aesthetic, not an omission.

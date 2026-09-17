@@ -27,9 +27,9 @@
         <span class="text-sm text-ink">brand-orange · #ffb147</span>
       </div>
       <div class="flex flex-col gap-2">
-        <div class="h-24 w-56 bg-gradient-to-r from-brand-purple via-brand-coral to-brand-orange"></div>
+        <div class="h-24 w-56 bg-linear-to-r from-brand-purple via-brand-coral to-brand-orange"></div>
         <span class="text-sm text-ink">
-          bg-gradient-to-r from-brand-purple via-brand-coral to-brand-orange
+          bg-linear-to-r from-brand-purple via-brand-coral to-brand-orange
         </span>
       </div>
     </div>
@@ -86,12 +86,12 @@
   <section class="flex flex-col gap-6">
     <h2 class="text-2xl font-bold text-ink">Text fields</h2>
     <div
-      class="flex flex-col gap-10 bg-gradient-to-r from-brand-purple via-brand-coral to-brand-orange p-10 sm:flex-row"
+      class="flex flex-col gap-10 bg-linear-to-r from-brand-purple via-brand-coral to-brand-orange p-10 sm:flex-row"
     >
       <app-text-field label="Name" [(value)]="name" class="flex-1" />
       <app-text-field label="Email" type="email" [(value)]="email" class="flex-1" />
     </div>
-    <div class="bg-gradient-to-r from-brand-purple via-brand-coral to-brand-orange p-10">
+    <div class="bg-linear-to-r from-brand-purple via-brand-coral to-brand-orange p-10">
       <app-text-field label="Message" [multiline]="true" [(value)]="message" />
     </div>
   </section>

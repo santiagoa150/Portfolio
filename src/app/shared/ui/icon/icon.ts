@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 
-export type IconName = 'arrow-up-right' | 'link' | 'phone' | 'mail' | 'behance' | 'dribbble' | 'instagram';
+export type IconName = 'arrow-up-right' | 'link' | 'phone' | 'mail' | 'github' | 'linkedin';
 
 @Component({
   selector: 'app-icon',

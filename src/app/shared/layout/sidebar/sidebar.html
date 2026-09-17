@@ -1,0 +1,134 @@
+<!-- Desktop sidebar: fixed, full height, persists while page content scrolls -->
+<aside class="fixed inset-y-0 left-0 z-40 hidden w-71.25 flex-col bg-ink px-12 py-14 lg:flex">
+  <a routerLink="/" class="font-serif text-xl font-bold leading-tight text-white">
+    {{ brandName }}
+  </a>
+
+  <nav class="mt-16 flex flex-col gap-5">
+    @for (link of navLinks; track link.path) {
+      <a
+        [routerLink]="link.path"
+        [routerLinkActiveOptions]="{ exact: link.exact }"
+        routerLinkActive
+        #rla="routerLinkActive"
+        [class.font-bold]="rla.isActive"
+        class="relative w-fit text-xl uppercase text-white"
+      >
+        {{ link.label }}
+        @if (rla.isActive) {
+          <span
+            class="absolute inset-x-0 top-1/2 h-1 -translate-y-1/2 bg-linear-to-r from-brand-orange via-brand-coral to-brand-purple"
+          ></span>
+        }
+      </a>
+    }
+    @if (isDesignSystemEnabled) {
+      <a
+        [routerLink]="designSystemLink.path"
+        routerLinkActive
+        #dsrla="routerLinkActive"
+        [class.font-bold]="dsrla.isActive"
+        class="mt-4 block w-fit border-t border-white/20 pt-4 text-xl uppercase text-white"
+      >
+        <span class="relative">
+          {{ designSystemLink.label }}
+          @if (dsrla.isActive) {
+            <span
+              class="absolute inset-x-0 top-1/2 h-1 -translate-y-1/2 bg-linear-to-r from-brand-orange via-brand-coral to-brand-purple"
+            ></span>
+          }
+        </span>
+      </a>
+    }
+  </nav>
+
+  <div class="mt-auto flex flex-col gap-6">
+    <div class="flex flex-col gap-3">
+      @for (social of socialLinks; track social.name) {
+        <a [href]="social.url" target="_blank" rel="noopener noreferrer" class="block size-10">
+          <app-icon [name]="social.name" [alt]="social.name" />
+        </a>
+      }
+    </div>
+    <p class="text-base text-white">{{ copyrightText }}</p>
+  </div>
+</aside>
+
+<!-- Mobile top bar -->
+<div class="fixed inset-x-0 top-0 z-40 flex h-16 items-center justify-between bg-ink px-6 lg:hidden">
+  <a routerLink="/" (click)="closeMobileMenu()" class="font-serif text-lg font-bold text-white">
+    {{ brandName }}
+  </a>
+  <button
+    type="button"
+    (click)="toggleMobileMenu()"
+    class="flex size-10 flex-col items-center justify-center gap-1.5"
+    [attr.aria-expanded]="isMobileMenuOpen()"
+    aria-controls="mobile-menu"
+  >
+    <span class="sr-only">{{ toggleMenuLabel }}</span>
+    @if (isMobileMenuOpen()) {
+      <span class="block h-0.5 w-6 translate-y-1 rotate-45 bg-white"></span>
+      <span class="block h-0.5 w-6 -translate-y-1 -rotate-45 bg-white"></span>
+    } @else {
+      <span class="block h-0.5 w-6 bg-white"></span>
+      <span class="block h-0.5 w-6 bg-white"></span>
+      <span class="block h-0.5 w-6 bg-white"></span>
+    }
+  </button>
+</div>
+
+<!-- Mobile menu overlay -->
+@if (isMobileMenuOpen()) {
+  <div id="mobile-menu" class="fixed inset-0 z-30 flex flex-col gap-10 overflow-y-auto bg-ink px-8 pt-24 pb-10 lg:hidden">
+    <nav class="flex flex-col gap-6">
+      @for (link of navLinks; track link.path) {
+        <a
+          [routerLink]="link.path"
+          [routerLinkActiveOptions]="{ exact: link.exact }"
+          routerLinkActive
+          #mrla="routerLinkActive"
+          [class.font-bold]="mrla.isActive"
+          (click)="closeMobileMenu()"
+          class="relative w-fit text-2xl uppercase text-white"
+        >
+          {{ link.label }}
+          @if (mrla.isActive) {
+            <span
+              class="absolute inset-x-0 top-1/2 h-1 -translate-y-1/2 bg-linear-to-r from-brand-orange via-brand-coral to-brand-purple"
+            ></span>
+          }
+        </a>
+      }
+      @if (isDesignSystemEnabled) {
+        <a
+          [routerLink]="designSystemLink.path"
+          routerLinkActive
+          #mdsrla="routerLinkActive"
+          [class.font-bold]="mdsrla.isActive"
+          (click)="closeMobileMenu()"
+          class="mt-2 block w-fit border-t border-white/20 pt-4 text-2xl uppercase text-white"
+        >
+          <span class="relative">
+            {{ designSystemLink.label }}
+            @if (mdsrla.isActive) {
+              <span
+                class="absolute inset-x-0 top-1/2 h-1 -translate-y-1/2 bg-linear-to-r from-brand-orange via-brand-coral to-brand-purple"
+              ></span>
+            }
+          </span>
+        </a>
+      }
+    </nav>
+    <div class="mt-auto flex flex-col gap-6">
+      <div class="flex gap-4">
+        @for (social of socialLinks; track social.name) {
+          <a [href]="social.url" target="_blank" rel="noopener noreferrer" class="block size-10">
+            <app-icon [name]="social.name" [alt]="social.name" />
+          </a>
+        }
+      </div>
+      <p class="text-base text-white">{{ copyrightText }}</p>
+    </div>
+  </div>
+}

@@ -30,7 +30,7 @@ export const routes: Routes = [
       import('./context/contact/ui/page/contact/contact.page').then((m) => m.Contact),
   },
   // Dev-only design system showcase — excluded from production builds/routing.
-  ...(environment.NODE_ENV === 'development'
+  ...(environment.isDesignSystemEnabled
     ? [
         {
           path: 'design-system',

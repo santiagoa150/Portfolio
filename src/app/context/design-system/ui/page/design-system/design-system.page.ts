@@ -11,15 +11,7 @@ import { TextField } from '../../../../../shared/ui/text-field/text-field';
   templateUrl: './design-system.page.html',
 })
 export class DesignSystem {
-  protected readonly icons: IconName[] = [
-    'arrow-up-right',
-    'link',
-    'phone',
-    'mail',
-    'behance',
-    'dribbble',
-    'instagram',
-  ];
+  protected readonly icons: IconName[] = ['arrow-up-right', 'link', 'phone', 'mail', 'github', 'linkedin'];
 
   protected readonly name = signal('');
   protected readonly email = signal('');
