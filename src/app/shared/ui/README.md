@@ -1,0 +1,61 @@
+# Shared UI components
+
+Base, reusable presentational components extracted from the Figma template ("Personal Portfolio Web Template"). Import them from their file directly (e.g. `import { Button } from '@app/shared/ui/button/button'` relative path) — there is no barrel file.
+
+## Icon (`app-icon`)
+
+Renders one of the SVG assets in `public/icons/` (extracted from Figma: `arrow-up-right`, `link`, `phone`, `mail`, `behance`, `dribbble`, `instagram`).
+
+```html
+<app-icon name="arrow-up-right" class="size-6" />
+```
+
+- `name` (required): one of `IconName`.
+- `alt`: accessible alt text, empty by default (decorative icons).
+
+## Button (`app-button`)
+
+Black pill-free (square corner) button matching the template's CTA style, with a trailing arrow icon by default. Label is projected content.
+
+```html
+<app-button variant="primary">Let's talk with me</app-button>
+<app-button variant="secondary" [showArrow]="false" type="submit">Submit</app-button>
+```
+
+- `variant`: `'primary'` (solid ink background, white text) | `'secondary'` (outlined). Default `'primary'`.
+- `type`: native button `type` attribute. Default `'button'`.
+- `showArrow`: whether to render the trailing arrow icon. Default `true`.
+
+## Card (`app-card`)
+
+Structural wrapper (flex column, consistent gap, no border/shadow/radius — the template's design is flat). Compose page-specific card content (image, title, text) inside it via projection.
+
+```html
+<app-card>
+  <img src="..." alt="..." />
+  <h3>Project title</h3>
+</app-card>
+```
+
+## TextField (`app-text-field`)
+
+Underlined form field (label + input or textarea) matching the contact form style on the gradient panel (white text on a dark/colored background).
+
+```html
+<app-text-field label="Name" [(value)]="name" />
+<app-text-field label="Message" [multiline]="true" [(value)]="message" />
+```
+
+- `label` (required): field label, rendered uppercase above the field.
+- `type`: `'text'` | `'email'`. Default `'text'`.
+- `multiline`: renders a `<textarea>` instead of `<input>`. Default `false`.
+- `placeholder`: optional placeholder text.
+- `value`: two-way bindable (`[(value)]`) current field value.
+
+## Design tokens
+
+Defined in `src/styles.css` under `@theme`, extracted from the Figma file:
+
+- Colors: `ink` (`#141313`, near-black — primary text/backgrounds) and the brand gradient stops `brand-purple` (`#b86adf`), `brand-coral` (`#ff6c63`), `brand-orange` (`#ffb147`) — used together as `bg-gradient-to-r from-brand-purple via-brand-coral to-brand-orange` for decorative panels (hero, testimonials, contact form).
+- Fonts: `font-sans` (IBM Plex Sans — body text, headings, UI) and `font-serif` (IBM Plex Serif Bold — logo mark only), loaded via Google Fonts in `src/index.html`.
+- Corners are square everywhere (no border-radius) — this is a deliberate part of the template's flat, bold aesthetic, not an omission.

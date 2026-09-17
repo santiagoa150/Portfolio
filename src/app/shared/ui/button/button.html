@@ -1,0 +1,12 @@
+<button
+  [type]="type()"
+  class="inline-flex h-14 items-center justify-center gap-2 px-10 text-lg font-medium"
+  [class]="
+    variant() === 'primary' ? 'bg-ink text-white' : 'border border-ink text-ink bg-transparent'
+  "
+>
+  <ng-content />
+  @if (showArrow()) {
+    <app-icon name="arrow-up-right" class="size-6 shrink-0" />
+  }
+</button>

@@ -1,0 +1,98 @@
+<div class="mx-auto flex max-w-5xl flex-col gap-16 p-10">
+  <header class="flex flex-col gap-2">
+    <p class="text-sm font-semibold uppercase tracking-wide text-ink/60">Dev only</p>
+    <h1 class="text-4xl font-bold text-ink">Design system</h1>
+    <p class="text-ink/70">
+      Tokens and base components extracted from the Figma "Personal Portfolio Web Template".
+    </p>
+  </header>
+
+  <section class="flex flex-col gap-6">
+    <h2 class="text-2xl font-bold text-ink">Colors</h2>
+    <div class="flex flex-wrap gap-6">
+      <div class="flex flex-col gap-2">
+        <div class="size-24 bg-ink"></div>
+        <span class="text-sm text-ink">ink · #141313</span>
+      </div>
+      <div class="flex flex-col gap-2">
+        <div class="size-24 bg-brand-purple"></div>
+        <span class="text-sm text-ink">brand-purple · #b86adf</span>
+      </div>
+      <div class="flex flex-col gap-2">
+        <div class="size-24 bg-brand-coral"></div>
+        <span class="text-sm text-ink">brand-coral · #ff6c63</span>
+      </div>
+      <div class="flex flex-col gap-2">
+        <div class="size-24 bg-brand-orange"></div>
+        <span class="text-sm text-ink">brand-orange · #ffb147</span>
+      </div>
+      <div class="flex flex-col gap-2">
+        <div class="h-24 w-56 bg-gradient-to-r from-brand-purple via-brand-coral to-brand-orange"></div>
+        <span class="text-sm text-ink">
+          bg-gradient-to-r from-brand-purple via-brand-coral to-brand-orange
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-6">
+    <h2 class="text-2xl font-bold text-ink">Typography</h2>
+    <div class="flex flex-col gap-4">
+      <p class="font-serif text-3xl font-bold text-ink">Jac. — font-serif (logo only)</p>
+      <p class="font-sans text-6xl font-bold text-ink">Aa Bb Cc — font-sans bold 60px</p>
+      <p class="font-sans text-4xl font-semibold italic text-ink">
+        Product Designer — font-sans semibold italic 36px
+      </p>
+      <p class="font-sans text-2xl font-medium text-ink">Read my blog — font-sans medium 24px</p>
+      <p class="font-sans text-lg font-normal text-ink">
+        You can customize a template — font-sans regular 18px
+      </p>
+      <p class="font-sans text-base font-medium uppercase text-ink/80">
+        Attach file — font-sans medium 16px uppercase
+      </p>
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-6">
+    <h2 class="text-2xl font-bold text-ink">Icons</h2>
+    <div class="flex flex-wrap gap-8">
+      @for (icon of icons; track icon) {
+        <div class="flex flex-col items-center gap-2">
+          <app-icon [name]="icon" class="size-10" />
+          <span class="text-sm text-ink">{{ icon }}</span>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-6">
+    <h2 class="text-2xl font-bold text-ink">Buttons</h2>
+    <div class="flex flex-wrap items-center gap-6">
+      <app-button variant="primary">Let's talk with me</app-button>
+      <app-button variant="secondary">Load more</app-button>
+      <app-button variant="primary" [showArrow]="false">Submit now</app-button>
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-6">
+    <h2 class="text-2xl font-bold text-ink">Card</h2>
+    <app-card class="max-w-sm">
+      <div class="h-48 w-full bg-ink/10"></div>
+      <p class="font-semibold italic text-ink">UX case study</p>
+      <p class="text-4xl font-bold text-ink">Card title</p>
+    </app-card>
+  </section>
+
+  <section class="flex flex-col gap-6">
+    <h2 class="text-2xl font-bold text-ink">Text fields</h2>
+    <div
+      class="flex flex-col gap-10 bg-gradient-to-r from-brand-purple via-brand-coral to-brand-orange p-10 sm:flex-row"
+    >
+      <app-text-field label="Name" [(value)]="name" class="flex-1" />
+      <app-text-field label="Email" type="email" [(value)]="email" class="flex-1" />
+    </div>
+    <div class="bg-gradient-to-r from-brand-purple via-brand-coral to-brand-orange p-10">
+      <app-text-field label="Message" [multiline]="true" [(value)]="message" />
+    </div>
+  </section>
+</div>
