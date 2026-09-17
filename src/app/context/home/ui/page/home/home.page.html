@@ -4,8 +4,13 @@
   <div class="flex max-w-xl flex-col gap-16">
     <div class="flex flex-col gap-8">
       <h1
-        class="text-5xl font-normal uppercase leading-[1.15] text-ink sm:text-6xl lg:text-8xl lg:leading-[1.05]"
+        class="relative text-5xl font-normal uppercase leading-[1.15] text-ink sm:text-6xl lg:text-[80px] lg:leading-[1.05]"
       >
+        <img
+          src="images/hero/blob-1.svg"
+          alt=""
+          class="pointer-events-none absolute top-[0.85em] -left-15 -z-10 w-36 -rotate-30 sm:w-44 lg:w-56"
+        />
         <span i18n="@@home.hero.line1">My name</span><br />
         <span i18n="@@home.hero.line2">is <span class="font-bold">Santiago</span></span><br />
         <span class="font-bold" i18n="@@home.hero.lastName">Álvarez...</span>
@@ -21,7 +26,10 @@
     <app-button routerLink="/contact" i18n="@@home.hero.cta">Let's talk with me</app-button>
 
     <div class="flex flex-wrap items-center gap-8 sm:gap-12">
-      <a [href]="'tel:' + phone" class="flex items-center gap-3 text-lg font-bold italic text-ink">
+      <a
+        [href]="'tel:' + phone.replaceAll(' ', '')"
+        class="flex items-center gap-3 text-lg font-bold italic text-ink"
+      >
         <app-icon name="phone" class="size-8 shrink-0" />
         {{ phone }}
       </a>
@@ -39,38 +47,44 @@
     <img
       src="images/hero/blob-2.svg"
       alt=""
-      class="pointer-events-none absolute top-20 left-2/8 w-4/5 -translate-x-1/2 -rotate-30"
+      class="pointer-events-none absolute top-20 left-2/8 w-3/5 -translate-x-1/2 -rotate-30 sm:w-4/5"
     />
     <img
       src="images/hero/blob-1.svg"
       alt=""
-      class="pointer-events-none absolute bottom-10 -right-30 w-4/5 -rotate-30"
+      class="pointer-events-none absolute bottom-10 -right-6 w-1/2 -rotate-30 sm:-right-30 sm:w-4/5"
     />
-    <div class="relative z-10 h-full w-full">
-      <img
-        src="images/santiago-hero.png"
-        alt="Santiago Álvarez"
-        class="h-full w-full object-contain grayscale"
-      />
+    <div class="relative h-full w-full scale-70 sm:scale-100">
+      <div class="relative z-10 h-full w-full">
+        <img
+          src="images/santiago-hero.png"
+          alt="Santiago Álvarez"
+          class="h-full w-full object-contain grayscale"
+        />
+        <div
+          aria-hidden="true"
+          class="bg-linear-to-br bottom-68 -left-32 rounded-full from-brand-orange via-brand-coral to-brand-purple mix-blend-color absolute inset-0 [clip-path:polygon(100%_-6%,100%_85%,60%_150%,19.5%_88%)]"
+        ></div>
+        <div
+          aria-hidden="true"
+          class="bg-linear-to-br rounded-full top-80 -right-25 rotate-150 from-brand-orange via-brand-coral to-brand-purple mix-blend-color absolute inset-0 [clip-path:polygon(-100%_35%,150%_10%,60%_150%,100%_100%)]"
+        ></div>
+      </div>
       <div
         aria-hidden="true"
-        class="bg-linear-to-br bottom-68 -left-32 rounded-full from-brand-orange via-brand-coral to-brand-purple mix-blend-color absolute inset-0 [clip-path:polygon(100%_-6%,100%_85%,60%_150%,19.5%_88%)]"
+        class="pointer-events-none absolute -right-4 -bottom-4 size-20 bg-[radial-gradient(var(--color-ink)_1.5px,transparent_1.5px)] bg-size-[10px_10px]"
       ></div>
-      <div
-        aria-hidden="true"
-        class="bg-linear-to-br rounded-full top-80 -right-25 rotate-150 from-brand-orange via-brand-coral to-brand-purple mix-blend-color absolute inset-0 [clip-path:polygon(-100%_35%,150%_10%,60%_150%,100%_100%)]"
-      ></div> 
+      <img
+        src="images/hero/star-1.svg"
+        alt=""
+        class="pointer-events-none absolute -right-3 top-6 size-7"
+      />
+      <img
+        src="images/hero/star-2.svg"
+        alt=""
+        class="pointer-events-none absolute -left-3 bottom-14 size-5"
+      />
     </div>
-    <img
-      src="images/hero/star-1.svg"
-      alt=""
-      class="pointer-events-none absolute -right-3 top-6 size-7"
-    />
-    <img
-      src="images/hero/star-2.svg"
-      alt=""
-      class="pointer-events-none absolute -left-3 bottom-14 size-5"
-    />
   </div>
 
   <div class="hidden lg:fixed lg:top-1/3 lg:right-4 lg:z-20 lg:flex lg:flex-col lg:items-center lg:gap-4">
