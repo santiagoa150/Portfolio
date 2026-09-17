@@ -1,4 +1,6 @@
+import { NgTemplateOutlet } from '@angular/common';
 import { Component, input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { Icon } from '../icon/icon';
 
@@ -6,11 +8,13 @@ export type ButtonVariant = 'primary' | 'secondary';
 
 @Component({
   selector: 'app-button',
-  imports: [Icon],
+  imports: [Icon, RouterLink, NgTemplateOutlet],
   templateUrl: './button.html',
 })
 export class Button {
   readonly variant = input<ButtonVariant>('primary');
   readonly type = input<'button' | 'submit'>('button');
   readonly showArrow = input(true);
+  /** When set, renders as a routed `<a>` instead of a `<button>`. */
+  readonly routerLink = input<string>();
 }

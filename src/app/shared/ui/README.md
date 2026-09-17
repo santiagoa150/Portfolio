@@ -20,11 +20,13 @@ Black pill-free (square corner) button matching the template's CTA style, with a
 ```html
 <app-button variant="primary">Let's talk with me</app-button>
 <app-button variant="secondary" [showArrow]="false" type="submit">Submit</app-button>
+<app-button routerLink="/contact">Let's talk with me</app-button>
 ```
 
 - `variant`: `'primary'` (solid ink background, white text) | `'secondary'` (outlined). Default `'primary'`.
-- `type`: native button `type` attribute. Default `'button'`.
+- `type`: native button `type` attribute. Default `'button'`. Ignored when `routerLink` is set.
 - `showArrow`: whether to render the trailing arrow icon. Default `true`.
+- `routerLink`: when set, renders a routed `<a>` instead of a `<button>` (same visual style) — use for navigation CTAs.
 
 ## Card (`app-card`)
 

@@ -10,4 +10,6 @@ export interface Environment {
   socialLinks: SocialLink[];
   /** Only `true` in development — gates the /design-system route and its sidebar link. */
   isDesignSystemEnabled: boolean;
+  contactPhone: string;
+  contactEmail: string;
 }

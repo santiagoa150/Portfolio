@@ -1,7 +1,6 @@
 {
   "locale": "es",
   "translations": {
-    "home.title": "Inicio",
     "about.title": "Sobre mí",
     "services.title": "Servicios",
     "works.title": "Proyectos",
@@ -16,6 +15,11 @@
     "nav.designSystem": "Componentes",
     "sidebar.brandName": "Santiago",
     "sidebar.copyright": "Copyright ©{$year} {$name}. Todos los derechos reservados.",
-    "sidebar.toggleMenu": "Abrir menú"
+    "sidebar.toggleMenu": "Abrir menú",
+    "home.hero.line1": "Mi nombre",
+    "home.hero.line2": "es {$START_TAG_SPAN}Santiago{$CLOSE_TAG_SPAN}",
+    "home.hero.lastName": "Álvarez...",
+    "home.hero.role": "Software Engineer",
+    "home.hero.cta": "Hablemos"
   }
 }
