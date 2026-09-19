@@ -17,4 +17,7 @@ export class Button {
   readonly showArrow = input(true);
   /** When set, renders as a routed `<a>` instead of a `<button>`. */
   readonly routerLink = input<string>();
+  /** When set, renders as a plain `<a>` instead of a `<button>` (e.g. a file download link). */
+  readonly href = input<string>();
+  readonly download = input(false);
 }

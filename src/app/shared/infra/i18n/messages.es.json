@@ -1,7 +1,6 @@
 {
   "locale": "es",
   "translations": {
-    "about.title": "Sobre mí",
     "services.title": "Servicios",
     "works.title": "Proyectos",
     "blog.title": "Blog",
@@ -19,7 +18,32 @@
     "home.hero.line1": "Mi nombre",
     "home.hero.line2": "es {$START_TAG_SPAN}Santiago{$CLOSE_TAG_SPAN}",
     "home.hero.lastName": "Álvarez...",
-    "home.hero.role": "Software Engineer",
-    "home.hero.cta": "Hablemos"
+    "home.hero.role": "{$START_TAG_SPAN}Software Engineer{$CLOSE_TAG_SPAN} basado en {$START_TAG_SPAN}{$INTERPOLATION}{$CLOSE_TAG_SPAN}",
+    "home.hero.cta": "Hablemos",
+    "about.hero.eyebrow": "¡Un gusto conocerte!",
+    "about.hero.scrollDown": "Ver más contenido",
+    "about.hero.heading": "Bienvenido a mi mundo",
+    "about.hero.name": "Santiago Álvarez",
+    "about.hero.role": "{$START_TAG_SPAN}Software Engineer{$CLOSE_TAG_SPAN} basado en {$START_TAG_SPAN}{$INTERPOLATION}{$CLOSE_TAG_SPAN}",
+    "about.hero.downloadCv": "Descargar CV",
+    "about.hero.age": "{$INTERPOLATION} años",
+    "about.stats.experience.label": "Años de experiencia",
+    "about.stats.experience.description": "¡Hola! Soy Santiago Álvarez, ingeniero de sistemas y Software Engineer especializado en backend, diseñando APIs, microservicios y sistemas distribuidos.",
+    "about.stats.tech.label": "Tecnologías dominadas",
+    "about.stats.tech.description": "Trabajo con Go, Node.js, Python, Java y PHP, mensajería basada en eventos, bases de datos relacionales y no relacionales, y observabilidad con Datadog y Grafana.",
+    "about.quote": "\"Uso la inteligencia artificial para acelerar mi pensamiento, nunca para reemplazarlo. La verdadera rendición no es depender de una herramienta, sino dejar de cuestionar lo que produce.\"",
+    "about.experience.eyebrow": "Experiencia",
+    "about.experience.heading": "Mi experiencia",
+    "about.experience.description": "Soy desarrollador de software con más de tres años de experiencia diseñando y construyendo aplicaciones backend de alta calidad: APIs RESTful, microservicios y sistemas orientados a eventos con Go, Node.js, Python, Java y PHP. Disfruto aprender continuamente y aportar en equipos con foco en escalabilidad y buenas prácticas.",
+    "about.experience.downloadResume": "Descargar mi CV",
+    "about.experience.job1.dateRange": "Agosto 2025 – Actualidad",
+    "about.experience.job1.company": "Mercado Libre Colombia",
+    "about.experience.job1.role": "Semi Senior Software Engineer",
+    "about.experience.job2.dateRange": "Junio 2022 – Junio 2025",
+    "about.experience.job2.company": "Innventa Software Development SAS",
+    "about.experience.job2.role": "Desarrollador Backend",
+    "about.experience.job3.dateRange": "Agosto 2024 – Diciembre 2024",
+    "about.experience.job3.company": "DAP · Alcaldía de Medellín",
+    "about.experience.job3.role": "Desarrollador Backend Independiente"
   }
 }

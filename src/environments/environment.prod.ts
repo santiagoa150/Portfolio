@@ -5,6 +5,9 @@ export const environment: Environment = {
   isDesignSystemEnabled: false,
   contactPhone: '+57 3008185774',
   contactEmail: 'santiagoa150@gmail.com',
+  birthDate: '2004-03-14',
+  location: 'Colombia',
+  careerStartDate: '2022-06-01',
   socialLinks: [
     { name: 'github', url: 'https://github.com/santiagoa150' },
     {

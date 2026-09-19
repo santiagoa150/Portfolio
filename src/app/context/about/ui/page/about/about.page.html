@@ -1,3 +1,183 @@
-<section class="flex min-h-[60vh] items-center justify-center">
-  <h1 class="text-4xl font-bold text-ink" i18n="@@about.title">About</h1>
+<section
+  class="relative mx-auto flex max-w-360 flex-col px-6 py-16 sm:px-10 lg:min-h-screen lg:justify-center lg:px-16 lg:py-0"
+>
+  <div class="flex flex-col gap-2">
+    <p class="text-lg font-bold italic text-ink" i18n="@@about.hero.eyebrow">Nice to meet you!</p>
+    <h1 class="text-4xl font-normal uppercase text-ink sm:text-5xl lg:text-6xl" i18n="@@about.hero.heading">
+      Welcome to my world
+    </h1>
+  </div>
+
+  <div class="mt-12 flex flex-col gap-12 lg:flex-row lg:items-start lg:gap-16">
+    <div class="flex flex-col items-center gap-8 lg:w-80 lg:shrink-0">
+      <div class="relative aspect-900/950 w-56 sm:w-64">
+        <div
+          aria-hidden="true"
+          class="pointer-events-none absolute -top-6 -left-8 size-16 bg-[radial-gradient(var(--color-ink)_1.5px,transparent_1.5px)] bg-size-[10px_10px]"
+        ></div>
+        <div class="bg-white relative z-10 h-full w-full overflow-hidden rounded-b-full">
+          <div
+            aria-hidden="true"
+            class="from-brand-purple via-brand-coral to-brand-orange bg-linear-to-br absolute inset-x-0 bottom-0 h-[47%]"
+          ></div>
+          <img
+            src="images/santiago-hero2.png"
+            alt="Santiago Álvarez"
+            class="relative h-auto w-full"
+          />
+        </div>
+      </div>
+      <div class="text-center">
+        <p
+          class="bg-linear-to-r from-brand-purple via-brand-coral to-brand-orange bg-clip-text text-2xl leading-relaxed font-bold uppercase text-transparent sm:text-3xl"
+          i18n="@@about.hero.name"
+        >
+          Santiago Álvarez
+        </p>
+        <p class="text-lg italic text-ink" i18n="@@about.hero.role">
+          <span class="font-bold">Software Engineer</span> based in
+          <span class="font-bold">{{ location }}</span>
+        </p>
+      </div>
+      <a
+        [href]="cvHref"
+        download
+        class="inline-flex items-center gap-2 text-lg font-bold italic text-ink underline underline-offset-4"
+      >
+        <span i18n="@@about.hero.downloadCv">Download CV</span>
+        <app-icon name="arrow-up-right" class="size-5 shrink-0" />
+      </a>
+    </div>
+
+    <div class="flex flex-1 flex-col gap-10">
+      <div class="grid grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2">
+        <a
+          [href]="'tel:' + phone.replaceAll(' ', '')"
+          class="flex items-center gap-3 text-base font-bold italic text-ink"
+        >
+          <app-icon name="phone" class="size-8 shrink-0" />
+          {{ phone }}
+        </a>
+        <div class="flex items-center gap-3 text-base font-bold italic text-ink">
+          <app-icon name="user" class="size-8 shrink-0" />
+          <span i18n="@@about.hero.age">{{ age }} years old</span>
+        </div>
+        <a
+          [href]="'mailto:' + email"
+          class="flex items-center gap-3 text-base font-bold italic text-ink"
+        >
+          <app-icon name="mail" class="size-8 shrink-0" />
+          {{ email }}
+        </a>
+        <div class="flex items-center gap-3 text-base font-bold italic text-ink">
+          <app-icon name="location" class="size-8 shrink-0" />
+          {{ location }}
+        </div>
+      </div>
+
+      <hr class="border-ink/10" />
+
+      <div class="grid gap-10 sm:grid-cols-2">
+        <div class="flex flex-col gap-3">
+          <div class="flex flex-wrap items-baseline gap-2">
+            <span
+              class="bg-linear-to-r from-brand-purple via-brand-coral to-brand-orange bg-clip-text text-5xl font-bold text-transparent"
+            >
+              {{ yearsOfExperience }}+
+            </span>
+            <span
+              class="text-lg font-bold uppercase leading-tight text-ink"
+              i18n="@@about.stats.experience.label"
+            >
+              Years of experience
+            </span>
+          </div>
+          <p class="text-ink/70" i18n="@@about.stats.experience.description">
+            Hi there! I'm Santiago Álvarez, a systems engineer and backend-focused Software
+            Engineer, designing APIs, microservices and distributed systems.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <div class="flex flex-wrap items-baseline gap-2">
+            <span
+              class="bg-linear-to-r from-brand-purple via-brand-coral to-brand-orange bg-clip-text text-5xl font-bold text-transparent"
+            >
+              20+
+            </span>
+            <span
+              class="text-lg font-bold uppercase leading-tight text-ink"
+              i18n="@@about.stats.tech.label"
+            >
+              Technologies mastered
+            </span>
+          </div>
+          <p class="text-ink/70" i18n="@@about.stats.tech.description">
+            I work with Go, Node.js, Python, Java and PHP, event-driven messaging, relational and
+            non-relational databases, and observability with Datadog and Grafana.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-6 bg-ink p-10 text-white">
+        <span
+          aria-hidden="true"
+          class="text-brand-coral pointer-events-none shrink-0 font-serif text-8xl leading-none"
+        >
+          &ldquo;
+        </span>
+        <p class="italic" i18n="@@about.quote">
+          "I use AI to accelerate my thinking, never to replace it. The real surrender isn't
+          depending on a tool, it's stopping to question what it produces."
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <button
+    type="button"
+    (click)="scrollToExperience()"
+    i18n-aria-label="@@about.hero.scrollDown"
+    aria-label="See more content"
+    [class.opacity-0]="!isAtTop()"
+    [class.pointer-events-none]="!isAtTop()"
+    class="border-ink text-ink absolute bottom-8 left-1/2 hidden size-12 -translate-x-1/2 cursor-pointer items-center justify-center rounded-full border transition-opacity duration-300 lg:flex animate-bounce"
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5">
+      <path d="M6 9l6 6 6-6" />
+    </svg>
+  </button>
+</section>
+
+<section id="experience"
+  class="bg-linear-to-br from-brand-purple via-brand-coral to-brand-orange px-6 py-16 sm:px-10 lg:px-16"
+>
+  <div class="mx-auto grid max-w-360 gap-12 lg:grid-cols-2 lg:gap-20">
+    <div class="flex flex-col gap-6 text-white">
+      <p class="italic" i18n="@@about.experience.eyebrow">Experience</p>
+      <h2 class="text-4xl font-normal uppercase sm:text-5xl" i18n="@@about.experience.heading">
+        My experience
+      </h2>
+      <p i18n="@@about.experience.description">
+        I'm a software developer with more than three years of experience designing and building
+        high-quality backend applications: RESTful APIs, microservices and event-driven systems
+        with Go, Node.js, Python, Java and PHP. I enjoy learning continuously and contributing to
+        teams with a focus on scalability and good practices.
+      </p>
+      <app-button [href]="cvHref" [download]="true" i18n="@@about.experience.downloadResume">
+        Download my resume
+      </app-button>
+    </div>
+
+    <div class="flex flex-col divide-y divide-white/30">
+      @for (job of experience; track job.company) {
+        <div class="flex flex-col gap-2 py-6 first:pt-0">
+          <div class="flex flex-wrap items-center justify-between gap-2 text-sm font-bold italic text-white/80">
+            <span>{{ job.dateRange }}</span>
+            <span>{{ job.company }}</span>
+          </div>
+          <p class="text-2xl font-bold uppercase text-white sm:text-3xl">{{ job.role }}</p>
+        </div>
+      }
+    </div>
+  </div>
 </section>

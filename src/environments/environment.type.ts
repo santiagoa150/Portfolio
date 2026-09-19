@@ -12,4 +12,9 @@ export interface Environment {
   isDesignSystemEnabled: boolean;
   contactPhone: string;
   contactEmail: string;
+  /** ISO date (YYYY-MM-DD) — age shown in the About page is computed from this, not hardcoded. */
+  birthDate: string;
+  location: string;
+  /** ISO date (YYYY-MM-DD) of the first professional role — years of experience is computed from this, not hardcoded. */
+  careerStartDate: string;
 }

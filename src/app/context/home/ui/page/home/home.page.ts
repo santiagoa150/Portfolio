@@ -12,5 +12,6 @@ import { Icon } from '../../../../../shared/ui/icon/icon';
 export class Home {
   protected readonly phone = environment.contactPhone;
   protected readonly email = environment.contactEmail;
+  protected readonly location = environment.location;
   protected readonly socialLinks = environment.socialLinks;
 }

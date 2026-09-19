@@ -15,6 +15,17 @@
   >
     <ng-container *ngTemplateOutlet="label" />
   </a>
+} @else if (href()) {
+  <a
+    [href]="href()"
+    [attr.download]="download() ? '' : null"
+    class="inline-flex h-14 items-center justify-center gap-2 px-10 text-lg font-medium"
+    [class]="
+      variant() === 'primary' ? 'bg-ink text-white' : 'border border-ink text-ink bg-transparent'
+    "
+  >
+    <ng-container *ngTemplateOutlet="label" />
+  </a>
 } @else {
   <button
     [type]="type()"
