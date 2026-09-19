@@ -3,13 +3,11 @@
   "translations": {
     "services.title": "Servicios",
     "works.title": "Proyectos",
-    "blog.title": "Blog",
     "contact.title": "Contacto",
     "nav.home": "Inicio",
     "nav.about": "Sobre mí",
     "nav.services": "Servicios",
     "nav.works": "Proyectos",
-    "nav.blog": "Blog",
     "nav.contact": "Contacto",
     "nav.designSystem": "Componentes",
     "sidebar.brandName": "Santiago",

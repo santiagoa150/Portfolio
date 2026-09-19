@@ -26,7 +26,6 @@ export class Sidebar {
     { label: $localize`:@@nav.about:About`, path: '/about', exact: false },
     { label: $localize`:@@nav.services:Services`, path: '/services', exact: false },
     { label: $localize`:@@nav.works:Works`, path: '/works', exact: false },
-    { label: $localize`:@@nav.blog:Blog`, path: '/blog', exact: false },
     { label: $localize`:@@nav.contact:Contact`, path: '/contact', exact: false },
   ];
 
