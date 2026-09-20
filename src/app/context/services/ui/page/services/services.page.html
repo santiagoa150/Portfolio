@@ -1,3 +1,40 @@
-<section class="flex min-h-[60vh] items-center justify-center">
-  <h1 class="text-4xl font-bold text-ink" i18n="@@services.title">Services</h1>
+<section class="mx-auto flex max-w-360 flex-col gap-16 px-6 py-16 sm:px-10 lg:px-16 lg:py-24">
+  <div class="flex max-w-2xl flex-col gap-4">
+    <p class="text-lg font-bold italic text-ink" i18n="@@services.hero.eyebrow">Service</p>
+    <h1
+      class="text-4xl font-normal uppercase text-ink sm:text-5xl lg:text-6xl"
+      i18n="@@services.hero.heading"
+    >
+      My specialties
+    </h1>
+  </div>
+
+  <div class="flex flex-col">
+    @for (service of services; track service.title; let i = $index; let isLast = $last) {
+      <div class="border-t border-ink/10" [class.border-b]="isLast">
+        <button
+          type="button"
+          (click)="toggle(i)"
+          [attr.aria-expanded]="isOpen(i)"
+          class="flex w-full cursor-pointer items-center justify-between gap-6 py-6 text-left"
+        >
+          <span class="text-xl font-bold uppercase sm:text-2xl" [class]="titleClass(i)">
+            <span aria-hidden="true">&bull;</span>
+            {{ service.title }}
+          </span>
+          <span class="shrink-0 text-3xl font-light leading-none text-ink" aria-hidden="true">{{
+            isOpen(i) ? '−' : '+'
+          }}</span>
+        </button>
+        <div
+          class="grid transition-[grid-template-rows] duration-300 ease-in-out"
+          [style.grid-template-rows]="isOpen(i) ? '1fr' : '0fr'"
+        >
+          <div class="overflow-hidden">
+            <p class="max-w-2xl pb-6 text-ink/70">{{ service.description }}</p>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
 </section>

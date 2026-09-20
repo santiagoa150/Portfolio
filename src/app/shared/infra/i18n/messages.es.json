@@ -1,7 +1,6 @@
 {
   "locale": "es",
   "translations": {
-    "services.title": "Servicios",
     "works.title": "Proyectos",
     "contact.title": "Contacto",
     "nav.home": "Inicio",
@@ -42,6 +41,20 @@
     "about.experience.job2.role": "Desarrollador Backend",
     "about.experience.job3.dateRange": "Agosto 2024 – Diciembre 2024",
     "about.experience.job3.company": "DAP · Alcaldía de Medellín",
-    "about.experience.job3.role": "Desarrollador Backend Independiente"
+    "about.experience.job3.role": "Desarrollador Backend Independiente",
+    "services.hero.eyebrow": "Servicio",
+    "services.hero.heading": "Mis especialidades",
+    "services.list.backend.title": "Desarrollo Backend",
+    "services.list.backend.description": "Diseño e implementación de APIs RESTful y sistemas backend, construidos para ser confiables, estar bien documentados y ser fáciles de mantener.",
+    "services.list.microservices.title": "Arquitectura de Microservicios",
+    "services.list.microservices.description": "Descomposición de sistemas monolíticos en microservicios desacoplados y desplegables de forma independiente que escalan junto con el producto.",
+    "services.list.events.title": "Sistemas Orientados a Eventos",
+    "services.list.events.description": "Mensajería asíncrona y arquitecturas orientadas a eventos que mantienen a los sistemas distribuidos responsivos bajo carga.",
+    "services.list.database.title": "Diseño de Bases de Datos",
+    "services.list.database.description": "Modelado y optimización de bases de datos relacionales y no relacionales para maximizar el rendimiento y la integridad de los datos.",
+    "services.list.observability.title": "Observabilidad y Monitoreo",
+    "services.list.observability.description": "Instrumentación de sistemas con herramientas como Datadog y Grafana para tener visibilidad completa del comportamiento en producción.",
+    "services.list.mentoring.title": "Revisión de Código y Mentoría",
+    "services.list.mentoring.description": "Revisión de código y mentoría a equipos con foco en escalabilidad, mantenibilidad y buenas prácticas de ingeniería."
   }
 }
