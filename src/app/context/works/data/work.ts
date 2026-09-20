@@ -14,6 +14,7 @@ export interface Work {
   readonly category: string;
   readonly title: string;
   readonly description: string;
+  /** Shown at a small size in the list and full-width in the detail banner — use a landscape crop (e.g. the page's hero/fold), never a full-page screenshot, or it renders as an oddly tall strip. */
   readonly cover: Media;
   readonly techStack: TechStackItem[];
   readonly gallery: Media[];
@@ -21,7 +22,6 @@ export interface Work {
 }
 
 const GO: TechStackItem = { name: 'Go', icon: 'go' };
-const NODE: TechStackItem = { name: 'Node.js', icon: 'nodejs' };
 const PYTHON: TechStackItem = { name: 'Python', icon: 'python' };
 const JAVA: TechStackItem = { name: 'Java', icon: 'java' };
 const PHP: TechStackItem = { name: 'PHP', icon: 'php' };
@@ -39,6 +39,9 @@ const TYPESCRIPT: TechStackItem = { name: 'TypeScript', icon: 'typescript' };
 const TAILWIND: TechStackItem = { name: 'Tailwind CSS', icon: 'tailwindcss' };
 const LEAFLET: TechStackItem = { name: 'Leaflet', icon: 'leaflet' };
 const AMAZON_S3: TechStackItem = { name: 'Amazon S3', icon: 'amazons3' };
+const REACT: TechStackItem = { name: 'React', icon: 'react' };
+const VITE: TechStackItem = { name: 'Vite', icon: 'vite' };
+const GRPC: TechStackItem = { name: 'gRPC', icon: 'grpc' };
 
 export const WORKS: Work[] = [
   {
@@ -103,19 +106,36 @@ export const WORKS: Work[] = [
   },
   {
     id: 2,
-    category: $localize`:@@works.list.project2.category:Test category`,
-    title: $localize`:@@works.list.project2.title:Test project 2`,
-    description: $localize`:@@works.list.project2.description:Test description for project 2. A real explanation of what the project does, the problem it solves and how it was built will go here.`,
+    category: $localize`:@@works.list.project2.category:Microservices Architecture`,
+    title: $localize`:@@works.list.project2.title:Mercado Libre Clone`,
+    description: $localize`:@@works.list.project2.description:A full clone of Mercado Libre's product detail page, backed by a real microservices architecture: an API gateway aggregates independent Products, Reviews, Sellers and Payments services that communicate over gRPC and follow the CQRS pattern. The React frontend reproduces the reference page in detail: image gallery, pricing, seller reputation, payment methods, specifications and a full reviews section with rating distribution.`,
     cover: {
-      kind: 'gradient',
-      gradientClass: 'bg-linear-to-tr from-brand-orange via-brand-coral to-brand-purple',
+      kind: 'image',
+      src: 'images/works/meli-clone/product-samsung-cover.png',
+      alt: $localize`:@@works.list.project2.cover.alt:Cloned Mercado Libre product page for a Samsung Galaxy A55, with gallery, price and seller information`,
     },
-    techStack: [NODE, MONGODB, DOCKER],
+    techStack: [REACT, NESTJS, GRPC, TYPESCRIPT, TAILWIND, VITE, DOCKER],
     gallery: [
-      { kind: 'gradient', gradientClass: 'bg-linear-to-r from-brand-orange via-brand-coral to-brand-purple' },
-      { kind: 'gradient', gradientClass: 'bg-linear-to-l from-brand-purple via-brand-coral to-brand-orange' },
-      { kind: 'gradient', gradientClass: 'bg-linear-to-t from-brand-orange via-brand-coral to-brand-purple' },
-      { kind: 'gradient', gradientClass: 'bg-linear-to-b from-brand-coral via-brand-orange to-brand-purple' },
+      {
+        kind: 'image',
+        src: 'images/works/meli-clone/product-samsung.png',
+        alt: $localize`:@@works.list.project2.gallery.productSamsung.alt:Full cloned product page for the Samsung Galaxy A55, including specifications and reviews`,
+      },
+      {
+        kind: 'image',
+        src: 'images/works/meli-clone/product-laundry.png',
+        alt: $localize`:@@works.list.project2.gallery.productLaundry.alt:Cloned product page for a different product, showing the layout adapts to any item`,
+      },
+      {
+        kind: 'image',
+        src: 'images/works/meli-clone/reviews-detail.png',
+        alt: $localize`:@@works.list.project2.gallery.reviewsDetail.alt:Reviews section with the aggregated rating, distribution bars and individual comments`,
+      },
+      {
+        kind: 'image',
+        src: 'images/works/meli-clone/not-found.png',
+        alt: $localize`:@@works.list.project2.gallery.notFound.alt:Branded not-found page for a product id that does not exist`,
+      },
     ],
   },
   {

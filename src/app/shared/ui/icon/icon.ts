@@ -27,7 +27,10 @@ export type IconName =
   | 'typescript'
   | 'tailwindcss'
   | 'leaflet'
-  | 'amazons3';
+  | 'amazons3'
+  | 'react'
+  | 'vite'
+  | 'grpc';
 
 @Component({
   selector: 'app-icon',
