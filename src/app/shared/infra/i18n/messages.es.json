@@ -2,7 +2,6 @@
   "locale": "es",
   "translations": {
     "works.title": "Proyectos",
-    "contact.title": "Contacto",
     "nav.home": "Inicio",
     "nav.about": "Sobre mí",
     "nav.services": "Servicios",
@@ -55,6 +54,19 @@
     "services.list.observability.title": "Observabilidad y Monitoreo",
     "services.list.observability.description": "Instrumentación de sistemas con herramientas como Datadog y Grafana para tener visibilidad completa del comportamiento en producción.",
     "services.list.mentoring.title": "Revisión de Código y Mentoría",
-    "services.list.mentoring.description": "Revisión de código y mentoría a equipos con foco en escalabilidad, mantenibilidad y buenas prácticas de ingeniería."
+    "services.list.mentoring.description": "Revisión de código y mentoría a equipos con foco en escalabilidad, mantenibilidad y buenas prácticas de ingeniería.",
+    "contact.hero.eyebrow": "Contacto",
+    "contact.hero.heading": "Contáctame",
+    "contact.hero.availability": "Disponible en Medellín Colombia",
+    "contact.form.heading": "¿Tienes un proyecto?",
+    "contact.form.nameLabel": "Nombre",
+    "contact.form.emailLabel": "Correo",
+    "contact.form.messageLabel": "Mensaje",
+    "contact.form.submit": "Enviar ahora",
+    "contact.form.success": "¡Listo! Tu cliente de correo debería haberse abierto con tu mensaje listo para enviar.",
+    "contact.form.errorRequired": "Por favor completa todos los campos antes de enviar.",
+    "contact.form.errorEmail": "Por favor ingresa un correo electrónico válido.",
+    "contact.form.mailSubject": "Nuevo mensaje desde el portafolio",
+    "contact.form.mailBody": "Nombre: {$name}\nCorreo: {$senderEmail}\n\n{$message}"
   }
 }
