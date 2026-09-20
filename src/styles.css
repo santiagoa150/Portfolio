@@ -11,8 +11,20 @@
 }
 
 @layer base {
+  html {
+    scrollbar-gutter: stable;
+  }
+
   body {
     font-family: var(--font-sans);
     color: var(--color-ink);
+  }
+
+  /* While a lightbox/modal sets overflow:hidden here, the scrollbar-gutter
+     reserved above has no scrollbar left to draw, so it shows this
+     background instead — darken it to match the overlay instead of a
+     stray white strip at the window edge. */
+  body.modal-open {
+    background-color: var(--color-ink);
   }
 }

@@ -20,7 +20,14 @@ export type IconName =
   | 'kafka'
   | 'redis'
   | 'datadog'
-  | 'grafana';
+  | 'grafana'
+  | 'nestjs'
+  | 'angular'
+  | 'firebase'
+  | 'typescript'
+  | 'tailwindcss'
+  | 'leaflet'
+  | 'amazons3';
 
 @Component({
   selector: 'app-icon',

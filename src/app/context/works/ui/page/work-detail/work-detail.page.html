@@ -8,7 +8,11 @@
       <span i18n="@@works.detail.back">Back to projects</span>
     </a>
 
-    <div class="aspect-16/9 w-full" [class]="w.coverGradient"></div>
+    @if (w.cover.kind === 'image') {
+      <img [src]="w.cover.src" [alt]="w.cover.alt" class="h-auto w-full" />
+    } @else {
+      <div class="aspect-video w-full" [class]="w.cover.gradientClass"></div>
+    }
 
     <div class="flex flex-col gap-4">
       <p class="italic text-ink/70">{{ w.category }}</p>
@@ -49,13 +53,61 @@
       <h2 class="text-2xl font-bold uppercase text-ink" i18n="@@works.detail.galleryHeading">
         Gallery
       </h2>
-      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        @for (image of w.galleryGradients; track $index) {
-          <div class="aspect-square w-full" [class]="image"></div>
+      <div class="columns-1 gap-6 sm:columns-2 lg:columns-3">
+        @for (image of w.gallery; track $index) {
+          @if (image.kind === 'image') {
+            <button
+              type="button"
+              (click)="openLightbox(image)"
+              class="relative z-0 mb-6 block w-full cursor-pointer break-inside-avoid shadow-md transition-[transform,box-shadow] duration-300 hover:z-10 hover:scale-105 hover:shadow-xl"
+            >
+              <img [src]="image.src" [alt]="image.alt" class="block w-full" />
+            </button>
+          } @else {
+            <button
+              type="button"
+              (click)="openLightbox(image)"
+              i18n-aria-label="@@works.detail.viewImage"
+              aria-label="View image"
+              class="aspect-4/3 relative z-0 mb-6 block w-full cursor-pointer break-inside-avoid shadow-md transition-[transform,box-shadow] duration-300 hover:z-10 hover:scale-105 hover:shadow-xl"
+              [class]="image.gradientClass"
+            ></button>
+          }
         }
       </div>
     </div>
   </section>
+
+  @if (lightboxImage(); as lightbox) {
+    <div class="fixed inset-0 z-50" role="dialog" aria-modal="true">
+      <button
+        type="button"
+        (click)="closeLightbox()"
+        i18n-aria-label="@@works.detail.closeLightbox"
+        aria-label="Close image"
+        class="flex size-full cursor-pointer items-center justify-center bg-ink/90 p-6 transition-opacity duration-300"
+        [class.opacity-100]="lightboxVisible()"
+        [class.opacity-0]="!lightboxVisible()"
+      >
+        @if (lightbox.kind === 'image') {
+          <img
+            [src]="lightbox.src"
+            [alt]="lightbox.alt"
+            class="max-h-[90vh] max-w-[90vw] object-contain shadow-2xl transition-transform duration-300"
+            [class.scale-100]="lightboxVisible()"
+            [class.scale-95]="!lightboxVisible()"
+          />
+        } @else {
+          <div
+            class="aspect-4/3 w-full max-w-3xl shadow-2xl transition-transform duration-300"
+            [class]="lightbox.gradientClass"
+            [class.scale-100]="lightboxVisible()"
+            [class.scale-95]="!lightboxVisible()"
+          ></div>
+        }
+      </button>
+    </div>
+  }
 } @else {
   <section class="mx-auto flex max-w-360 flex-col items-start gap-6 px-6 py-24 sm:px-10 lg:px-16">
     <p class="text-2xl font-bold text-ink" i18n="@@works.detail.notFound">Project not found.</p>

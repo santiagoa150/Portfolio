@@ -20,10 +20,18 @@
           <p class="text-xl font-bold text-ink sm:text-2xl">{{ work.title }}</p>
           <app-icon name="arrow-up-right" class="size-8" />
         </div>
-        <div
-          class="aspect-square w-32 shrink-0 sm:w-36 lg:w-40"
-          [class]="work.coverGradient"
-        ></div>
+        @if (work.cover.kind === 'image') {
+          <img
+            [src]="work.cover.src"
+            [alt]="work.cover.alt"
+            class="h-auto w-52 shrink-0 sm:w-72 lg:w-80"
+          />
+        } @else {
+          <div
+            class="aspect-4/3 w-52 shrink-0 sm:w-72 lg:w-80"
+            [class]="work.cover.gradientClass"
+          ></div>
+        }
       </a>
     }
   </div>

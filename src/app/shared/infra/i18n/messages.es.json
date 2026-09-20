@@ -69,9 +69,19 @@
     "contact.form.mailBody": "Nombre: {$name}\nCorreo: {$senderEmail}\n\n{$message}",
     "works.hero.eyebrow": "Trabajo",
     "works.hero.heading": "Proyectos recientes",
-    "works.list.project1.category": "Categoría de prueba",
-    "works.list.project1.title": "Proyecto de prueba 1",
-    "works.list.project1.description": "Descripción de prueba para el proyecto 1. Aquí irá una explicación real de qué hace el proyecto, qué problema resuelve y cómo se construyó.",
+    "works.list.project1.category": "Desarrollo Full Stack",
+    "works.list.project1.title": "SISMATES",
+    "works.list.project1.description": "SISMATES (Sistema de Monitoreo de Afectaciones, Triage Estructural y Seguimiento) es una plataforma web para el reporte ciudadano, seguimiento, evaluación y priorización de afectaciones estructurales visibles después de un sismo. Centraliza ubicación, evidencia fotográfica, reportes y evaluaciones profesionales en un mapa interactivo, con un flujo de triage continuo de 0 a 10 y tres niveles de acceso: ciudadanía, profesionales verificados y profesionales habilitados.",
+    "works.list.project1.cover.alt": "Página de inicio pública de SISMATES, con su propuesta de valor y un ejemplo de puntaje de triage en vivo",
+    "works.list.project1.gallery.landingPurpose.alt": "Sección del landing que explica el problema que resuelve SISMATES",
+    "works.list.project1.gallery.landingProcess.alt": "Sección del landing que muestra el flujo de reporte en tres pasos",
+    "works.list.project1.gallery.landingPeople.alt": "Sección del landing que describe los tres niveles de usuario",
+    "works.list.project1.gallery.createPhotos.alt": "Formulario de reporte ciudadano: recomendaciones y carga de evidencia fotográfica",
+    "works.list.project1.gallery.createLocation.alt": "Formulario de reporte ciudadano: selección de ubicación en el mapa",
+    "works.list.project1.gallery.detailActions.alt": "Vista de detalle de una afectación con las acciones de evaluación profesional",
+    "works.list.project1.gallery.detailReports.alt": "Vista de detalle de una afectación mostrando la línea de tiempo de reportes ciudadanos",
+    "works.list.project1.gallery.mapPopup.alt": "Ventana emergente de un punto del mapa con el resumen de un reporte",
+    "works.list.project1.gallery.reviewModal.alt": "Modal de revisión profesional con el control deslizante de puntaje de triage",
     "works.list.project2.category": "Categoría de prueba",
     "works.list.project2.title": "Proyecto de prueba 2",
     "works.list.project2.description": "Descripción de prueba para el proyecto 2. Aquí irá una explicación real de qué hace el proyecto, qué problema resuelve y cómo se construyó.",
@@ -91,6 +101,8 @@
     "works.detail.viewLive": "Ver proyecto en vivo",
     "works.detail.stackHeading": "Stack tecnológico",
     "works.detail.galleryHeading": "Galería",
-    "works.detail.notFound": "Proyecto no encontrado."
+    "works.detail.notFound": "Proyecto no encontrado.",
+    "works.detail.closeLightbox": "Cerrar imagen",
+    "works.detail.viewImage": "Ver imagen"
   }
 }
