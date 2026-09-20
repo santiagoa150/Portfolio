@@ -1,3 +1,30 @@
-<section class="flex min-h-[60vh] items-center justify-center">
-  <h1 class="text-4xl font-bold text-ink" i18n="@@works.title">Works</h1>
+<section class="mx-auto flex max-w-360 flex-col gap-16 px-6 py-16 sm:px-10 lg:px-16 lg:py-24">
+  <div class="flex max-w-2xl flex-col gap-4">
+    <p class="text-lg font-bold italic text-ink" i18n="@@works.hero.eyebrow">Work</p>
+    <h1
+      class="text-4xl font-normal uppercase text-ink sm:text-5xl lg:text-6xl"
+      i18n="@@works.hero.heading"
+    >
+      Recent projects
+    </h1>
+  </div>
+
+  <div class="grid grid-cols-1 gap-x-16 gap-y-16 lg:grid-cols-2">
+    @for (work of works; track work.id) {
+      <a
+        [routerLink]="['/works', work.id]"
+        class="flex items-start gap-6 transition-opacity hover:opacity-80"
+      >
+        <div class="flex flex-1 flex-col gap-3">
+          <p class="italic text-ink/70">{{ work.category }}</p>
+          <p class="text-xl font-bold text-ink sm:text-2xl">{{ work.title }}</p>
+          <app-icon name="arrow-up-right" class="size-8" />
+        </div>
+        <div
+          class="aspect-square w-32 shrink-0 sm:w-36 lg:w-40"
+          [class]="work.coverGradient"
+        ></div>
+      </a>
+    }
+  </div>
 </section>

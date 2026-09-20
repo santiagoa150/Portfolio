@@ -4,7 +4,7 @@ Base, reusable presentational components extracted from the Figma template ("Per
 
 ## Icon (`app-icon`)
 
-Renders one of the SVG assets in `public/icons/`: `arrow-up-right`, `link`, `phone`, `mail` are extracted from Figma; `github`, `linkedin`, `user` and `location` are custom-authored (not in the source Figma file, which only ships generic Behance/Dribbble/Instagram placeholders, and had no age/location icons at all) but follow the same visual pattern (white circle badge, `#141313` glyph) for consistency.
+Renders one of the SVG assets in `public/icons/`: `arrow-up-right`, `link`, `phone`, `mail` are extracted from Figma; `github`, `linkedin`, `user` and `location` are custom-authored (not in the source Figma file, which only ships generic Behance/Dribbble/Instagram placeholders, and had no age/location icons at all) but follow the same visual pattern (white circle badge, `#141313` glyph) for consistency. `go`, `nodejs`, `python`, `java`, `php`, `postgresql`, `mongodb`, `docker`, `kafka`, `redis`, `datadog` and `grafana` are real technology logos (single-path marks from the MIT-licensed [Simple Icons](https://simpleicons.org/) set, recolored to `#141313` and put on the same circle badge) used for the Works project-detail tech stack — not from Figma either.
 
 ```html
 <app-icon name="arrow-up-right" class="size-6" />
@@ -28,7 +28,7 @@ Black pill-free (square corner) button matching the template's CTA style, with a
 - `type`: native button `type` attribute. Default `'button'`. Ignored when `routerLink` or `href` is set.
 - `showArrow`: whether to render the trailing arrow icon. Default `true`.
 - `routerLink`: when set, renders a routed `<a>` instead of a `<button>` (same visual style) — use for navigation CTAs.
-- `href` / `download`: when `href` is set (and no `routerLink`), renders a plain `<a>` instead of a `<button>` — use for file downloads (e.g. a CV) or external links; `download` adds the native `download` attribute.
+- `href` / `download` / `target`: when `href` is set (and no `routerLink`), renders a plain `<a>` instead of a `<button>` — use for file downloads (e.g. a CV) or external links; `download` adds the native `download` attribute, and `target: '_blank'` (with `rel="noopener noreferrer"` added automatically) opens external links in a new tab so visitors keep this site open. Both default off/`'_self'`.
 
 ## Card (`app-card`)
 

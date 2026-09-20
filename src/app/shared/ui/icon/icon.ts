@@ -8,7 +8,19 @@ export type IconName =
   | 'github'
   | 'linkedin'
   | 'user'
-  | 'location';
+  | 'location'
+  | 'go'
+  | 'nodejs'
+  | 'python'
+  | 'java'
+  | 'php'
+  | 'postgresql'
+  | 'mongodb'
+  | 'docker'
+  | 'kafka'
+  | 'redis'
+  | 'datadog'
+  | 'grafana';
 
 @Component({
   selector: 'app-icon',

@@ -21,6 +21,11 @@ export const routes: Routes = [
     loadComponent: () => import('./context/works/ui/page/works/works.page').then((m) => m.Works),
   },
   {
+    path: 'works/:id',
+    loadComponent: () =>
+      import('./context/works/ui/page/work-detail/work-detail.page').then((m) => m.WorkDetail),
+  },
+  {
     path: 'contact',
     loadComponent: () =>
       import('./context/contact/ui/page/contact/contact.page').then((m) => m.Contact),

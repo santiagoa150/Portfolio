@@ -1,7 +1,6 @@
 {
   "locale": "es",
   "translations": {
-    "works.title": "Proyectos",
     "nav.home": "Inicio",
     "nav.about": "Sobre mí",
     "nav.services": "Servicios",
@@ -67,6 +66,31 @@
     "contact.form.errorRequired": "Por favor completa todos los campos antes de enviar.",
     "contact.form.errorEmail": "Por favor ingresa un correo electrónico válido.",
     "contact.form.mailSubject": "Nuevo mensaje desde el portafolio",
-    "contact.form.mailBody": "Nombre: {$name}\nCorreo: {$senderEmail}\n\n{$message}"
+    "contact.form.mailBody": "Nombre: {$name}\nCorreo: {$senderEmail}\n\n{$message}",
+    "works.hero.eyebrow": "Trabajo",
+    "works.hero.heading": "Proyectos recientes",
+    "works.list.project1.category": "Categoría de prueba",
+    "works.list.project1.title": "Proyecto de prueba 1",
+    "works.list.project1.description": "Descripción de prueba para el proyecto 1. Aquí irá una explicación real de qué hace el proyecto, qué problema resuelve y cómo se construyó.",
+    "works.list.project2.category": "Categoría de prueba",
+    "works.list.project2.title": "Proyecto de prueba 2",
+    "works.list.project2.description": "Descripción de prueba para el proyecto 2. Aquí irá una explicación real de qué hace el proyecto, qué problema resuelve y cómo se construyó.",
+    "works.list.project3.category": "Categoría de prueba",
+    "works.list.project3.title": "Proyecto de prueba 3",
+    "works.list.project3.description": "Descripción de prueba para el proyecto 3. Aquí irá una explicación real de qué hace el proyecto, qué problema resuelve y cómo se construyó.",
+    "works.list.project4.category": "Categoría de prueba",
+    "works.list.project4.title": "Proyecto de prueba 4",
+    "works.list.project4.description": "Descripción de prueba para el proyecto 4. Aquí irá una explicación real de qué hace el proyecto, qué problema resuelve y cómo se construyó.",
+    "works.list.project5.category": "Categoría de prueba",
+    "works.list.project5.title": "Proyecto de prueba 5",
+    "works.list.project5.description": "Descripción de prueba para el proyecto 5. Aquí irá una explicación real de qué hace el proyecto, qué problema resuelve y cómo se construyó.",
+    "works.list.project6.category": "Categoría de prueba",
+    "works.list.project6.title": "Proyecto de prueba 6",
+    "works.list.project6.description": "Descripción de prueba para el proyecto 6. Aquí irá una explicación real de qué hace el proyecto, qué problema resuelve y cómo se construyó.",
+    "works.detail.back": "Volver a proyectos",
+    "works.detail.viewLive": "Ver proyecto en vivo",
+    "works.detail.stackHeading": "Stack tecnológico",
+    "works.detail.galleryHeading": "Galería",
+    "works.detail.notFound": "Proyecto no encontrado."
   }
 }

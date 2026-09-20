@@ -19,6 +19,8 @@
   <a
     [href]="href()"
     [attr.download]="download() ? '' : null"
+    [attr.target]="target() === '_blank' ? '_blank' : null"
+    [attr.rel]="target() === '_blank' ? 'noopener noreferrer' : null"
     class="inline-flex h-14 items-center justify-center gap-2 px-10 text-lg font-medium"
     [class]="
       variant() === 'primary' ? 'bg-ink text-white' : 'border border-ink text-ink bg-transparent'

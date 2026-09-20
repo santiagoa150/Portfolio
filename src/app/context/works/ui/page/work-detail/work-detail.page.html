@@ -1,0 +1,70 @@
+@if (work(); as w) {
+  <section class="mx-auto flex max-w-360 flex-col gap-16 px-6 py-16 sm:px-10 lg:px-16 lg:py-24">
+    <a
+      routerLink="/works"
+      class="inline-flex w-fit items-center gap-2 text-sm font-bold uppercase text-ink/70 transition-colors hover:text-ink"
+    >
+      <span aria-hidden="true">&larr;</span>
+      <span i18n="@@works.detail.back">Back to projects</span>
+    </a>
+
+    <div class="aspect-16/9 w-full" [class]="w.coverGradient"></div>
+
+    <div class="flex flex-col gap-4">
+      <p class="italic text-ink/70">{{ w.category }}</p>
+      <h1 class="text-4xl font-normal uppercase text-ink sm:text-5xl lg:text-6xl">
+        {{ w.title }}
+      </h1>
+    </div>
+
+    <div class="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+      <p class="max-w-2xl text-lg text-ink/70">{{ w.description }}</p>
+      @if (w.deployUrl) {
+        <app-button
+          [href]="w.deployUrl"
+          target="_blank"
+          class="shrink-0"
+          i18n="@@works.detail.viewLive"
+        >
+          View live project
+        </app-button>
+      }
+    </div>
+
+    <div class="flex flex-col gap-6">
+      <h2 class="text-2xl font-bold uppercase text-ink" i18n="@@works.detail.stackHeading">
+        Tech stack
+      </h2>
+      <div class="flex flex-wrap gap-x-8 gap-y-4">
+        @for (tech of w.techStack; track tech.name) {
+          <div class="flex items-center gap-3">
+            <app-icon [name]="tech.icon" [alt]="tech.name" class="size-10 shrink-0" />
+            <span class="font-bold text-ink">{{ tech.name }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-6">
+      <h2 class="text-2xl font-bold uppercase text-ink" i18n="@@works.detail.galleryHeading">
+        Gallery
+      </h2>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        @for (image of w.galleryGradients; track $index) {
+          <div class="aspect-square w-full" [class]="image"></div>
+        }
+      </div>
+    </div>
+  </section>
+} @else {
+  <section class="mx-auto flex max-w-360 flex-col items-start gap-6 px-6 py-24 sm:px-10 lg:px-16">
+    <p class="text-2xl font-bold text-ink" i18n="@@works.detail.notFound">Project not found.</p>
+    <a
+      routerLink="/works"
+      class="text-lg font-bold italic text-ink underline underline-offset-4"
+      i18n="@@works.detail.back"
+    >
+      Back to projects
+    </a>
+  </section>
+}

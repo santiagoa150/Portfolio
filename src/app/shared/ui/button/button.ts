@@ -20,4 +20,6 @@ export class Button {
   /** When set, renders as a plain `<a>` instead of a `<button>` (e.g. a file download link). */
   readonly href = input<string>();
   readonly download = input(false);
+  /** Only applied when `href` is set — use `'_blank'` for external links so visitors keep this site open. */
+  readonly target = input<'_self' | '_blank'>('_self');
 }
