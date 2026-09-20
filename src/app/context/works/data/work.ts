@@ -25,7 +25,6 @@ const GO: TechStackItem = { name: 'Go', icon: 'go' };
 const PYTHON: TechStackItem = { name: 'Python', icon: 'python' };
 const JAVA: TechStackItem = { name: 'Java', icon: 'java' };
 const PHP: TechStackItem = { name: 'PHP', icon: 'php' };
-const POSTGRESQL: TechStackItem = { name: 'PostgreSQL', icon: 'postgresql' };
 const MONGODB: TechStackItem = { name: 'MongoDB', icon: 'mongodb' };
 const DOCKER: TechStackItem = { name: 'Docker', icon: 'docker' };
 const KAFKA: TechStackItem = { name: 'Apache Kafka', icon: 'kafka' };
@@ -42,6 +41,8 @@ const AMAZON_S3: TechStackItem = { name: 'Amazon S3', icon: 'amazons3' };
 const REACT: TechStackItem = { name: 'React', icon: 'react' };
 const VITE: TechStackItem = { name: 'Vite', icon: 'vite' };
 const GRPC: TechStackItem = { name: 'gRPC', icon: 'grpc' };
+const FASTAPI: TechStackItem = { name: 'FastAPI', icon: 'fastapi' };
+const SSE: TechStackItem = { name: 'Server-Sent Events', icon: 'sse' };
 
 export const WORKS: Work[] = [
   {
@@ -140,21 +141,37 @@ export const WORKS: Work[] = [
   },
   {
     id: 3,
-    category: $localize`:@@works.list.project3.category:Test category`,
-    title: $localize`:@@works.list.project3.title:Test project 3`,
-    description: $localize`:@@works.list.project3.description:Test description for project 3. A real explanation of what the project does, the problem it solves and how it was built will go here.`,
+    category: $localize`:@@works.list.project3.category:Sales Automation`,
+    title: $localize`:@@works.list.project3.title:Novaventa Backoffice`,
+    description: $localize`:@@works.list.project3.description:A management tool for a Novaventa catalog resale business (a Latin American direct-sales company). The backend integrates with Novaventa's own product catalog to pull real product data and pricing, tracks sales campaigns, clients and orders, and computes profit margins automatically. The Angular backoffice lets the reseller manage campaigns, clients and provider credentials, while payment receipts are generated for each order.`,
     cover: {
-      kind: 'gradient',
-      gradientClass: 'bg-linear-to-b from-brand-coral via-brand-orange to-brand-purple',
+      kind: 'image',
+      src: 'images/works/novaventa/hero-cover.png',
+      alt: $localize`:@@works.list.project3.cover.alt:Novaventa Backoffice public landing page, offering easy receipts and order management for a catalog resale business`,
     },
-    techStack: [PYTHON, POSTGRESQL, REDIS],
+    techStack: [ANGULAR, FASTAPI, PYTHON, MONGODB, SSE, TYPESCRIPT, TAILWIND, DOCKER],
     gallery: [
-      { kind: 'gradient', gradientClass: 'bg-linear-to-r from-brand-coral via-brand-orange to-brand-purple' },
-      { kind: 'gradient', gradientClass: 'bg-linear-to-l from-brand-purple via-brand-orange to-brand-coral' },
-      { kind: 'gradient', gradientClass: 'bg-linear-to-t from-brand-coral via-brand-purple to-brand-orange' },
-      { kind: 'gradient', gradientClass: 'bg-linear-to-b from-brand-orange via-brand-coral to-brand-purple' },
+      {
+        kind: 'image',
+        src: 'images/works/novaventa/features.png',
+        alt: $localize`:@@works.list.project3.gallery.features.alt:Landing page section listing the tool's benefits: simple, versatile and hassle-free`,
+      },
+      {
+        kind: 'image',
+        src: 'images/works/novaventa/campaign-products.png',
+        alt: $localize`:@@works.list.project3.gallery.campaignProducts.alt:Campaign detail showing real catalog products with list price, catalog price and computed profit`,
+      },
+      {
+        kind: 'image',
+        src: 'images/works/novaventa/clients.png',
+        alt: $localize`:@@works.list.project3.gallery.clients.alt:Client list for the reseller's business`,
+      },
+      {
+        kind: 'image',
+        src: 'images/works/novaventa/settings.png',
+        alt: $localize`:@@works.list.project3.gallery.settings.alt:Settings screen for the provider authentication token and cart id`,
+      },
     ],
-    deployUrl: 'https://example.com',
   },
   {
     id: 4,

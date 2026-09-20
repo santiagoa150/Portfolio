@@ -30,7 +30,9 @@ export type IconName =
   | 'amazons3'
   | 'react'
   | 'vite'
-  | 'grpc';
+  | 'grpc'
+  | 'fastapi'
+  | 'sse';
 
 @Component({
   selector: 'app-icon',
