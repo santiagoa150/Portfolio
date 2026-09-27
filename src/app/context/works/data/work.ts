@@ -21,15 +21,10 @@ export interface Work {
   readonly deployUrl?: string;
 }
 
-const GO: TechStackItem = { name: 'Go', icon: 'go' };
 const PYTHON: TechStackItem = { name: 'Python', icon: 'python' };
-const PHP: TechStackItem = { name: 'PHP', icon: 'php' };
+const POSTGRESQL: TechStackItem = { name: 'PostgreSQL', icon: 'postgresql' };
 const MONGODB: TechStackItem = { name: 'MongoDB', icon: 'mongodb' };
 const DOCKER: TechStackItem = { name: 'Docker', icon: 'docker' };
-const KAFKA: TechStackItem = { name: 'Apache Kafka', icon: 'kafka' };
-const REDIS: TechStackItem = { name: 'Redis', icon: 'redis' };
-const DATADOG: TechStackItem = { name: 'Datadog', icon: 'datadog' };
-const GRAFANA: TechStackItem = { name: 'Grafana', icon: 'grafana' };
 const ANGULAR: TechStackItem = { name: 'Angular', icon: 'angular' };
 const NESTJS: TechStackItem = { name: 'NestJS', icon: 'nestjs' };
 const FIREBASE: TechStackItem = { name: 'Firebase', icon: 'firebase' };
@@ -210,37 +205,36 @@ export const WORKS: Work[] = [
   },
   {
     id: 5,
-    category: $localize`:@@works.list.project5.category:Test category`,
-    title: $localize`:@@works.list.project5.title:Test project 5`,
-    description: $localize`:@@works.list.project5.description:Test description for project 5. A real explanation of what the project does, the problem it solves and how it was built will go here.`,
+    category: $localize`:@@works.list.project5.category:Multiverse Data Aggregation`,
+    title: $localize`:@@works.list.project5.title:Multipokedex`,
+    description: $localize`:@@works.list.project5.description:Multipokedex, a Pokédex-style platform that unifies the Pokémon and Rick and Morty universes into a single browsable catalog. A NestJS backend ingests and normalizes data from the public PokéAPI and Rick and Morty API into its own PostgreSQL database on first boot, then exposes it through a documented REST API with JWT-authenticated accounts. Signed-in users can register their own custom Pokémon and Rick and Morty characters, and edit or delete only the entries they created, while every visitor can browse, search and drill into detailed stat, move and evolution pages for the Pokémon universe.`,
     cover: {
-      kind: 'gradient',
-      gradientClass: 'bg-linear-to-tr from-brand-orange via-brand-coral to-brand-purple',
+      kind: 'image',
+      src: 'images/works/multidex/pokemon-list-cover.png',
+      alt: $localize`:@@works.list.project5.cover.alt:Pokémon universe catalog, showing entries imported from the public PokéAPI`,
     },
-    techStack: [PHP, MONGODB, REDIS],
+    techStack: [REACT, NESTJS, POSTGRESQL, TYPESCRIPT, TAILWIND, VITE, DOCKER],
     gallery: [
-      { kind: 'gradient', gradientClass: 'bg-linear-to-r from-brand-orange via-brand-coral to-brand-purple' },
-      { kind: 'gradient', gradientClass: 'bg-linear-to-l from-brand-purple via-brand-coral to-brand-orange' },
-      { kind: 'gradient', gradientClass: 'bg-linear-to-t from-brand-orange via-brand-coral to-brand-purple' },
-      { kind: 'gradient', gradientClass: 'bg-linear-to-b from-brand-coral via-brand-orange to-brand-purple' },
-    ],
-    deployUrl: 'https://example.com',
-  },
-  {
-    id: 6,
-    category: $localize`:@@works.list.project6.category:Test category`,
-    title: $localize`:@@works.list.project6.title:Test project 6`,
-    description: $localize`:@@works.list.project6.description:Test description for project 6. A real explanation of what the project does, the problem it solves and how it was built will go here.`,
-    cover: {
-      kind: 'gradient',
-      gradientClass: 'bg-linear-to-b from-brand-coral via-brand-orange to-brand-purple',
-    },
-    techStack: [GO, KAFKA, DATADOG, GRAFANA],
-    gallery: [
-      { kind: 'gradient', gradientClass: 'bg-linear-to-r from-brand-coral via-brand-orange to-brand-purple' },
-      { kind: 'gradient', gradientClass: 'bg-linear-to-l from-brand-purple via-brand-orange to-brand-coral' },
-      { kind: 'gradient', gradientClass: 'bg-linear-to-t from-brand-coral via-brand-purple to-brand-orange' },
-      { kind: 'gradient', gradientClass: 'bg-linear-to-b from-brand-orange via-brand-coral to-brand-purple' },
+      {
+        kind: 'image',
+        src: 'images/works/multidex/rickandmorty-list.png',
+        alt: $localize`:@@works.list.project5.gallery.rickandmortyList.alt:Rick and Morty universe catalog, with characters imported from the Rick and Morty API`,
+      },
+      {
+        kind: 'image',
+        src: 'images/works/multidex/pokemon-modal.png',
+        alt: $localize`:@@works.list.project5.gallery.pokemonModal.alt:Quick-view modal for a Pokémon entry with its type, height and weight`,
+      },
+      {
+        kind: 'image',
+        src: 'images/works/multidex/pokemon-stats.png',
+        alt: $localize`:@@works.list.project5.gallery.pokemonStats.alt:Full Pokémon detail page with base stats, move list and evolution line`,
+      },
+      {
+        kind: 'image',
+        src: 'images/works/multidex/create-pokemon.png',
+        alt: $localize`:@@works.list.project5.gallery.createPokemon.alt:Form to register a custom Pokémon entry with its own stats and moves`,
+      },
     ],
   },
 ];
