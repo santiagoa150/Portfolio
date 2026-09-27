@@ -1,5 +1,5 @@
-import { Component, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, LOCALE_ID, inject, signal } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 import { environment } from '../../../../environments/environment';
 import { Icon } from '../../ui/icon/icon';
@@ -10,6 +10,12 @@ interface NavLink {
   readonly exact: boolean;
 }
 
+interface LanguageOption {
+  readonly code: string;
+  readonly label: string;
+  readonly switchAriaLabel: string;
+}
+
 @Component({
   selector: 'app-sidebar',
   imports: [RouterLink, RouterLinkActive, Icon],
@@ -18,7 +24,7 @@ interface NavLink {
 export class Sidebar {
   protected readonly brandName = $localize`:@@sidebar.brandName:Santiago`;
   protected readonly currentYear = new Date().getFullYear();
-  protected readonly copyrightText = $localize`:@@sidebar.copyright:Copyright ©${this.currentYear}:year: ${this.brandName}:name:. All right reserved.`;
+  protected readonly copyrightText = $localize`:@@sidebar.copyright:Copyright ©${this.currentYear}:year: ${this.brandName}:name:. All rights reserved.`;
   protected readonly socialLinks = environment.socialLinks;
 
   protected readonly navLinks: NavLink[] = [
@@ -37,6 +43,26 @@ export class Sidebar {
   };
 
   protected readonly toggleMenuLabel = $localize`:@@sidebar.toggleMenu:Toggle menu`;
+
+  private readonly router = inject(Router);
+  protected readonly currentLocale = inject(LOCALE_ID);
+  protected readonly languageSwitcherLabel = $localize`:@@sidebar.language.groupLabel:Language`;
+  protected readonly languageOptions: LanguageOption[] = [
+    {
+      code: 'es',
+      label: 'ES',
+      switchAriaLabel: $localize`:@@sidebar.language.switchToSpanish:Switch to Spanish`,
+    },
+    {
+      code: 'en',
+      label: 'EN',
+      switchAriaLabel: $localize`:@@sidebar.language.switchToEnglish:Switch to English`,
+    },
+  ];
+
+  protected localeHref(code: string): string {
+    return `/${code}${this.router.url}`;
+  }
 
   protected readonly isMobileMenuOpen = signal(false);
 

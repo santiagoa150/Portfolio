@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { Sidebar } from './shared/layout/sidebar/sidebar';
+import { SeoService } from './shared/infra/seo/seo.service';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,8 @@ import { Sidebar } from './shared/layout/sidebar/sidebar';
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {}
+export class App {
+  constructor() {
+    inject(SeoService).init();
+  }
+}

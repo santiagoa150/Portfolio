@@ -43,6 +43,26 @@
   </nav>
 
   <div class="mt-auto flex flex-col gap-6">
+    <div
+      class="flex items-center gap-3"
+      role="group"
+      [attr.aria-label]="languageSwitcherLabel"
+    >
+      @for (lang of languageOptions; track lang.code) {
+        @if (lang.code === currentLocale) {
+          <span class="text-sm font-bold uppercase text-white" aria-current="true">{{
+            lang.label
+          }}</span>
+        } @else {
+          <a
+            [href]="localeHref(lang.code)"
+            [attr.aria-label]="lang.switchAriaLabel"
+            class="text-sm uppercase text-white/60 hover:text-white"
+            >{{ lang.label }}</a
+          >
+        }
+      }
+    </div>
     <div class="flex flex-col gap-3">
       @for (social of socialLinks; track social.name) {
         <a [href]="social.url" target="_blank" rel="noopener noreferrer" class="block size-10">
@@ -51,6 +71,24 @@
       }
     </div>
     <p class="text-base text-white">{{ copyrightText }}</p>
+    <p class="text-xs text-white/50" i18n="@@sidebar.credit">
+      Design adapted from the
+      <a
+        href="https://www.figma.com/community/file/1218023713246072698/personal-portfolio-web-template"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline"
+        >Personal Portfolio Web Template</a
+      >
+      by Zubaear, licensed under
+      <a
+        href="https://creativecommons.org/licenses/by/4.0/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline"
+        >CC BY 4.0</a
+      >.
+    </p>
   </div>
 </aside>
 
@@ -121,6 +159,26 @@
       }
     </nav>
     <div class="mt-auto flex flex-col gap-6">
+      <div
+        class="flex items-center gap-4"
+        role="group"
+        [attr.aria-label]="languageSwitcherLabel"
+      >
+        @for (lang of languageOptions; track lang.code) {
+          @if (lang.code === currentLocale) {
+            <span class="text-base font-bold uppercase text-white" aria-current="true">{{
+              lang.label
+            }}</span>
+          } @else {
+            <a
+              [href]="localeHref(lang.code)"
+              [attr.aria-label]="lang.switchAriaLabel"
+              class="text-base uppercase text-white/60 hover:text-white"
+              >{{ lang.label }}</a
+            >
+          }
+        }
+      </div>
       <div class="flex gap-4">
         @for (social of socialLinks; track social.name) {
           <a [href]="social.url" target="_blank" rel="noopener noreferrer" class="block size-10">
@@ -129,6 +187,24 @@
         }
       </div>
       <p class="text-base text-white">{{ copyrightText }}</p>
+      <p class="text-xs text-white/50" i18n="@@sidebar.credit">
+        Design adapted from the
+        <a
+          href="https://www.figma.com/community/file/1218023713246072698/personal-portfolio-web-template"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline"
+          >Personal Portfolio Web Template</a
+        >
+        by Zubaear, licensed under
+        <a
+          href="https://creativecommons.org/licenses/by/4.0/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline"
+          >CC BY 4.0</a
+        >.
+      </p>
     </div>
   </div>
 }

@@ -19,7 +19,7 @@
       "sourceRoot": "src",
       "prefix": "app",
       "i18n": {
-        "sourceLocale": "source",
+        "sourceLocale": "en",
         "locales": {
           "es": "src/app/shared/infra/i18n/messages.es.json"
         }
@@ -46,7 +46,7 @@
               "entry": "src/server.ts"
             },
             "polyfills": ["@angular/localize/init"],
-            "localize": ["es"]
+            "localize": ["es", "en"]
           },
           "configurations": {
             "production": {
