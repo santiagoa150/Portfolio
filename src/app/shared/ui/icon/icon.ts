@@ -32,7 +32,9 @@ export type IconName =
   | 'vite'
   | 'grpc'
   | 'fastapi'
-  | 'sse';
+  | 'sse'
+  | 'mui'
+  | 'socketio';
 
 @Component({
   selector: 'app-icon',

@@ -23,7 +23,6 @@ export interface Work {
 
 const GO: TechStackItem = { name: 'Go', icon: 'go' };
 const PYTHON: TechStackItem = { name: 'Python', icon: 'python' };
-const JAVA: TechStackItem = { name: 'Java', icon: 'java' };
 const PHP: TechStackItem = { name: 'PHP', icon: 'php' };
 const MONGODB: TechStackItem = { name: 'MongoDB', icon: 'mongodb' };
 const DOCKER: TechStackItem = { name: 'Docker', icon: 'docker' };
@@ -43,6 +42,8 @@ const VITE: TechStackItem = { name: 'Vite', icon: 'vite' };
 const GRPC: TechStackItem = { name: 'gRPC', icon: 'grpc' };
 const FASTAPI: TechStackItem = { name: 'FastAPI', icon: 'fastapi' };
 const SSE: TechStackItem = { name: 'Server-Sent Events', icon: 'sse' };
+const MUI: TechStackItem = { name: 'Material UI', icon: 'mui' };
+const SOCKETIO: TechStackItem = { name: 'Socket.IO', icon: 'socketio' };
 
 export const WORKS: Work[] = [
   {
@@ -175,19 +176,36 @@ export const WORKS: Work[] = [
   },
   {
     id: 4,
-    category: $localize`:@@works.list.project4.category:Test category`,
-    title: $localize`:@@works.list.project4.title:Test project 4`,
-    description: $localize`:@@works.list.project4.description:Test description for project 4. A real explanation of what the project does, the problem it solves and how it was built will go here.`,
+    category: $localize`:@@works.list.project4.category:Real-Time Multiplayer Game`,
+    title: $localize`:@@works.list.project4.title:Apuntados`,
+    description: $localize`:@@works.list.project4.description:A real-time multiplayer implementation of Apuntados, a Latin American card game, with user accounts, token-based betting per match, customizable card designs, and public or private rooms for 2 to 6 players. A NestJS backend validates every move through a rules engine and broadcasts state changes over Socket.IO, while the React frontend keeps every player's board in sync live.`,
     cover: {
-      kind: 'gradient',
-      gradientClass: 'bg-linear-to-br from-brand-purple via-brand-coral to-brand-orange',
+      kind: 'image',
+      src: 'images/works/apuntados/gameplay.png',
+      alt: $localize`:@@works.list.project4.cover.alt:A match in progress with both players' cards on the table`,
     },
-    techStack: [JAVA, KAFKA, DOCKER, GRAFANA],
+    techStack: [REACT, NESTJS, SOCKETIO, MONGODB, MUI, TYPESCRIPT, VITE],
     gallery: [
-      { kind: 'gradient', gradientClass: 'bg-linear-to-r from-brand-purple via-brand-coral to-brand-orange' },
-      { kind: 'gradient', gradientClass: 'bg-linear-to-l from-brand-orange via-brand-coral to-brand-purple' },
-      { kind: 'gradient', gradientClass: 'bg-linear-to-t from-brand-coral via-brand-orange to-brand-purple' },
-      { kind: 'gradient', gradientClass: 'bg-linear-to-b from-brand-purple via-brand-coral to-brand-orange' },
+      {
+        kind: 'image',
+        src: 'images/works/apuntados/login-cover.png',
+        alt: $localize`:@@works.list.project4.gallery.login.alt:Apuntados login and registration screen`,
+      },
+      {
+        kind: 'image',
+        src: 'images/works/apuntados/lobby.png',
+        alt: $localize`:@@works.list.project4.gallery.lobby.alt:Lobby to create a new game or join an open public match`,
+      },
+      {
+        kind: 'image',
+        src: 'images/works/apuntados/card-designs.png',
+        alt: $localize`:@@works.list.project4.gallery.cardDesigns.alt:Card back design picker with a full deck preview`,
+      },
+      {
+        kind: 'image',
+        src: 'images/works/apuntados/waiting-room.png',
+        alt: $localize`:@@works.list.project4.gallery.waitingRoom.alt:Waiting room with both players connected, ready to start`,
+      },
     ],
   },
   {
