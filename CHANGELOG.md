@@ -9,6 +9,13 @@ Entries below are generated automatically by [semantic-release](https://semantic
 [Conventional Commits](https://www.conventionalcommits.org/) merged into `main` — see
 [CONTRIBUTING.md](CONTRIBUTING.md). They should not be edited by hand.
 
+## [1.0.1](https://github.com/santiagoa150/Portfolio/compare/v1.0.0...v1.0.1) (2026-10-11)
+
+
+### Bug Fixes
+
+* keep CHANGELOG.md header fixed when semantic-release updates it ([6013d20](https://github.com/santiagoa150/Portfolio/commit/6013d2078c6b811fa00e1d68245c6c4b87bbe147))
+
 # 1.0.0 (2026-10-11)
 
 
