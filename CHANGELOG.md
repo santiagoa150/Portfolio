@@ -1,3 +1,10 @@
+# 1.0.0 (2026-10-11)
+
+
+### Features
+
+* add CI/CD pipeline, Conventional Commits and test structure ([23e42c8](https://github.com/santiagoa150/Portfolio/commit/23e42c80a54b146e9cd608f6c05052cf4741a57f))
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
