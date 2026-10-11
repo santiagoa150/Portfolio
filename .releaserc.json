@@ -3,7 +3,12 @@
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    "@semantic-release/changelog",
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogTitle": "# Changelog\n\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\nEntries below are generated automatically by [semantic-release](https://semantic-release.gitbook.io/) from\n[Conventional Commits](https://www.conventionalcommits.org/) merged into `main` — see\n[CONTRIBUTING.md](CONTRIBUTING.md). They should not be edited by hand."
+      }
+    ],
     [
       "@semantic-release/npm",
       {
